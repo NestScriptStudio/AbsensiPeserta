@@ -199,24 +199,25 @@
             box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
         }
 
-        /* Responsif untuk HP / Layar Kecil */
-        @media (max-width: 480px) {
-            body {
-                padding: 0;
-            }
-            .card {
-                padding: 18px;
-                border-radius: 0;
-                box-shadow: none;
-                min-height: calc(100vh - 110px);
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }
-            .main-container {
-                padding: 0;
-                align-items: stretch;
-            }
+/* Responsif untuk HP / Layar Kecil */
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+        /* Memastikan body minimal setinggi layar penuh */
+        min-height: 100vh; 
+    }
+    .card {
+        padding: 18px;
+        border-radius: 0;
+        box-shadow: none;
+        /* Hapus min-height yang kaku agar kartu menyesuaikan isi konten secara fleksibel */
+        min-height: auto; 
+        display: block; /* Kembalikan ke block biasa agar konten mengalir normal */
+    }
+    .main-container {
+        padding: 10px;
+        align-items: flex-start; /* Ubah agar konten dimulai dari atas, tidak menumpuk di tengah secara kaku */
+    }
             nav {
                 padding: 10px 15px;
             }
